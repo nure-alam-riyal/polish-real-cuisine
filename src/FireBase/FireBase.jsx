@@ -1,7 +1,7 @@
 
 import { initializeApp } from "firebase/app";
 
-
+import { getAuth } from "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyDMWUwfYhEryi6hA31Ycn0_KNzAOUnaU4s",
   authDomain: "resturant-management-106b2.firebaseapp.com",
@@ -12,7 +12,8 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const auth=get
+const auth=getAuth(app)
+export default auth
 // echo "# b10a11-client-side-nure-alam-riyal" >> README.md
 // git init
 // git add README.md

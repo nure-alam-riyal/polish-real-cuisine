@@ -1,8 +1,10 @@
 import { Link } from "react-router-dom";
 import google  from '../../assets/google.png'
+import useAuthContext from "../../Context/AuthContext";
 
 
 const Registration = () => {
+  const {googleLogin}=useAuthContext()
     const handleregister=e=>{
         e.preventDefault()
         const form=e.target
@@ -11,6 +13,15 @@ const Registration = () => {
         const email=form.email.value
         const password=form.password.value
         console.log(email,password,photo,name )
+    }
+    const hangleGoogleLogIn=()=>{
+      googleLogin()
+      .then(result=>{
+        console.log(result.user)
+      })
+      .catch(error=>{
+        console.log(error.massage)
+      })
     }
     return (
         <div className="hero bg-base-200 min-h-screen">
@@ -55,7 +66,7 @@ const Registration = () => {
           
             </form>
             <div className="divider mx-8 text-center divider-warning">OR</div>
-            <div className="flex btn bg-orange-100 mx-8 my-4  items-center justify-center">
+            <div onClick={hangleGoogleLogIn} className="flex btn bg-orange-100 mx-8 my-4  items-center justify-center">
               <img className='W-12 h-12' src={google} alt="" />
               <div className="">Login With Google</div>
             </div>
