@@ -1,13 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import useAuthContext from "../Context/AuthContext";
 
 
 const NavBar = () => {
+    const {user, LogOut}=useAuthContext()
+    const links2=<>
+      <li className="px-4"><NavLink to='/myfoods'> My Foods</NavLink></li>
+      <li className="px-4"><NavLink to='/addfood'> Add Food</NavLink></li>
+      <li className="px-4"><NavLink to='/myorders'>My Order</NavLink></li>
+   </>
+             
     const links = <>
-        <Link to='/'><li>Home</li></Link>
-        <Link to='/'><li>Home</li></Link>
-        <Link to='/'><li>Home</li></Link>
-        <Link to='/'><li>Home</li></Link>
-                 </>
+       <li className="px-4"> <NavLink className=""  to='/'>        Home</NavLink></li>
+       <li className="px-4"> <NavLink className=""  to='/allfoods'>All Foods</NavLink></li>
+       <li className="px-4"> <NavLink className=""  to='/gallery'> Gallery</NavLink></li>
+            </>
     return (
         <div className="navbar mx-auto w-11/12 bg-base-100">
             <div className="navbar-start">
@@ -40,7 +47,26 @@ const NavBar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <Link className="btn bg-blue-300" to='login'>Log In</Link>
+                {
+                    user?
+                    <div className="flex items-center gap-2">
+                        <div className="dropdown dropdown-end">
+      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+        <div className="w-10 rounded-full">
+        <img className="w-12 h-12 rounded-full" referrerPolicy="no-referrer" src={user?.photoURL} alt="userName" />
+        </div>
+      </div>
+      <ul
+        tabIndex={0}
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        {links2}
+      </ul>
+    </div>
+                        
+                        <Link onClick={ LogOut} className="btn bg-blue-300" to='login'>Log Out</Link></div>
+                    :
+                    <div><Link className="btn bg-blue-300" to='login'>Log In</Link></div>
+                }
             </div>
         </div>
     );
