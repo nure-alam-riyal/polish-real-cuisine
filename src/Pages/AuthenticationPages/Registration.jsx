@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 import google  from '../../assets/google.png'
 import useAuthContext from "../../Context/AuthContext";
+import { updateProfile } from "firebase/auth";
+import auth from "../../FireBase/FireBase";
 
 
 const Registration = () => {
-  const {googleLogin}=useAuthContext()
+  const {googleLogin,createUser}=useAuthContext()
     const handleregister=e=>{
         e.preventDefault()
         const form=e.target
@@ -12,8 +14,20 @@ const Registration = () => {
         const photo=form.photo.value
         const email=form.email.value
         const password=form.password.value
-        console.log(email,password,photo,name )
-    }
+        createUser(email,password)
+        .then(result=>{
+          console.log(result.user)
+          updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+          }).then(() => {
+            // Profile updated!
+            // ...
+          }).catch(() => {
+            // An error occurred
+            // ...
+          });
+    })
+  }
     const hangleGoogleLogIn=()=>{
       googleLogin()
       .then(result=>{
