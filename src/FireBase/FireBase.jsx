@@ -3,12 +3,12 @@ import { initializeApp } from "firebase/app";
 
 import { getAuth } from "firebase/auth";
 const firebaseConfig = {
-  apiKey: "AIzaSyDMWUwfYhEryi6hA31Ycn0_KNzAOUnaU4s",
-  authDomain: "resturant-management-106b2.firebaseapp.com",
-  projectId: "resturant-management-106b2",
-  storageBucket: "resturant-management-106b2.firebasestorage.app",
-  messagingSenderId: "941714134153",
-  appId: "1:941714134153:web:bfccb3bda5ee2c2c00a258"
+  apiKey:import.meta.env.VITE_apiKey ,
+  authDomain:import.meta.env.VITE_authDomain ,
+  projectId:import.meta.env.VITE_projectId ,
+  storageBucket:import.meta.env.VITE_storageBucket,
+  messagingSenderId:import.meta.env.VITE_messagingSenderId ,
+  appId:import.meta.env.VITE_appId ,
 };
 
 const app = initializeApp(firebaseConfig);
