@@ -17,6 +17,7 @@ const PurcheasePages = () => {
             purchasedData.quantity=parseFloat(purchasedData.quantity)
             purchasedData.price=parseFloat(purchasedData.price)
             purchasedData.foods_id=_id;
+            purchasedData.ownerName=ownerName
             purchasedData.buyingTime=new Date();
 
           axios.post('http://localhost:1507/purchased-foods',purchasedData)
@@ -30,7 +31,7 @@ const PurcheasePages = () => {
             <label className="label">
               <span className="label-text">Food Name</span>
             </label>
-            <input defaultValue={foodName} type="text" placeholder="Food Name" className="input input-bordered" required />
+            <input defaultValue={foodName} type="text" placeholder="Food Name" name="foodName" className="input input-bordered" required />
           </div>
           <div className="form-control">
             <label className="label">
