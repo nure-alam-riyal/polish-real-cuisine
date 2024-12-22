@@ -8,6 +8,8 @@ import MyOders from "../Pages/MyOders";
 import Gallary from "../Pages/Gallary";
 import AllFoods from "../Pages/AllFoods";
 import AddFood from "../Pages/AddFood";
+import SingleFood from "../Pages/SingleFood";
+import PurcheasePages from "../Pages/PurcheasePages";
 
 const router = createBrowserRouter([
     {
@@ -44,6 +46,16 @@ const router = createBrowserRouter([
             },{
                 path:'addfood',
                 element:<AddFood></AddFood>
+
+            },{
+                path:'food/:id',
+                element:<SingleFood></SingleFood>,
+                loader:({params})=>fetch(`http://localhost:1507/food/${params.id}`)
+
+            },{
+                path:'/purchase/:id',
+                element:<PurcheasePages></PurcheasePages>,
+                loader:({params})=>fetch(`http://localhost:1507/food/${params.id}`)
 
             }
         ]

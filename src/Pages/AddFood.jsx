@@ -1,4 +1,5 @@
 
+import axios from "axios";
 import useAuthContext from "../Context/AuthContext";
 
 
@@ -8,7 +9,12 @@ const AddFood = () => {
         e.preventDefault()
         const formdata=new FormData(e.target)
         const addedInfo=Object.fromEntries(formdata.entries())
-        console.log(addedInfo)
+        addedInfo.Price=parseFloat(addedInfo.Price)
+        addedInfo.foodQuantity=parseFloat(addedInfo.foodQuantity)
+      
+         addedInfo.purchaseCount=0
+        axios.post('http://localhost:1507/add-food',addedInfo)
+        .then(res=>console.log(res.data))        
     }
     return (
 
@@ -50,13 +56,13 @@ const AddFood = () => {
                             <label className="label">
                                 <span className="label-text">Quantity</span>
                             </label>
-                            <input type="text" name="foodQuantity" placeholder="Quantity" className="input input-bordered" required />
+                            <input type="number" name="foodQuantity" placeholder="Quantity" className="input input-bordered" required />
                         </div>
                         <div className="form-control lg:w-1/2">
                             <label className="label">
                                 <span className="label-text">Price</span>
                             </label>
-                            <input type="text" name="Price" placeholder="Price" className="input input-bordered" required />
+                            <input type="number" name="Price" placeholder="Price" className="input input-bordered" required />
                         </div>
                         </div>
                         <div className="lg:flex gap-6">
@@ -64,13 +70,13 @@ const AddFood = () => {
                         <label className="label">
                             <span className="label-text">Email</span>
                         </label>
-                        <input type="email" defaultValue={user?.email} readOnly name="email" placeholder="Email (owner)" className="input input-bordered" required />
+                        <input type="email" defaultValue={user?.email} readOnly name="ownerEmail" placeholder="Email (owner)" className="input input-bordered" required />
                     </div>
                     <div className="form-control lg:w-1/2">
                         <label className="label">
                             <span className="label-text">Name</span>
                         </label>
-                        <input type="text" defaultValue={user?.displayName} readOnly name="password" placeholder="Name (owner)" className="input input-bordered" required />
+                        <input type="text" defaultValue={user?.displayName} readOnly name="ownerName" placeholder="Name (owner)" className="input input-bordered" required />
 
                     </div>
                     </div>
