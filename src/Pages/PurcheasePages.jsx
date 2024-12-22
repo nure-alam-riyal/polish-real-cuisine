@@ -17,6 +17,7 @@ const PurcheasePages = () => {
             purchasedData.quantity=parseFloat(purchasedData.quantity)
             purchasedData.price=parseFloat(purchasedData.price)
             purchasedData.foods_id=_id;
+            purchasedData.foodPhoto=foodPhoto;
             purchasedData.ownerName=ownerName
             purchasedData.buyingTime=new Date();
 

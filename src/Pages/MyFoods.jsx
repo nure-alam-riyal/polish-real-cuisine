@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import useAuthContext from "../Context/AuthContext";
 import { FaUserEdit } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 
 const MyFoods = () => {
@@ -61,7 +62,7 @@ const MyFoods = () => {
                                             <button className="btn btn-ghost btn-xs">{food?.purchaseCount}</button>
                                         </td>
                                         <td className="flex justify-center items-center">
-                                            <FaUserEdit className="text-3xl "></FaUserEdit>
+                                            <Link to={`/update/${food?._id}`} className='hover:btn'><FaUserEdit className="text-3xl "></FaUserEdit></Link>
                                         </td>
                                     </tr>)
                             }
