@@ -9,6 +9,7 @@ import {
 import PropTypes from 'prop-types'
 import { createContext, useEffect, useState } from 'react';
 import auth from '../FireBase/FireBase';
+import toast from 'react-hot-toast';
 
 export const DataContext = createContext(null)
 const AuthProvider = ({ children }) => {
@@ -30,10 +31,10 @@ const AuthProvider = ({ children }) => {
     }
     const LogOut = () => {
         signOut(auth).then(() => {
-            alert('log out')
+            toast.success('successfully Log out')
         })
             .catch(err => {
-                console.log(err)
+                toast.error(err.meassage)
             })
     }
     useEffect(() => {

@@ -1,15 +1,15 @@
-import { data, useLoaderData } from "react-router-dom";
+import {  useLoaderData } from "react-router-dom";
 import useAuthContext from "../Context/AuthContext";
 import axios from "axios";
+import Lottie from "lottie-react";
+import lottiepur from '../assets/lottie/purchase.json'
 
 
 const PurcheasePages = () => {
     const {user}=useAuthContext()
     const {_id,
-        description,Price,
-        foodQuantity,
-        foodOrigin,foodPhoto,foodName,foodCategory,
-        purchaseCount,ownerName}=useLoaderData()
+       foodPhoto,foodName,
+       ownerName}=useLoaderData()
         const handlePurchase=e=>{
             e.preventDefault()
             const formData=new FormData(e.target)
@@ -26,7 +26,9 @@ const PurcheasePages = () => {
 
         }
     return (
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="lg:flex my-10 justify-center items-center gap-20">
+          <div><Lottie className="w-96 h-96 rounded-full" animationData={lottiepur}></Lottie></div>
+          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handlePurchase} className="card-body">
           <div className="form-control">
             <label className="label">
@@ -60,7 +62,7 @@ const PurcheasePages = () => {
             <label className="label">
               <span className="label-text">Buyer Email</span>
             </label>
-            <input type="text" name="buyerEmail" placeholder="Price"  defaultValue={user?.email} className="input input-bordered" required />
+            <input type="text" name="buyerEmail" readOnly placeholder="Price"  defaultValue={user?.email} className="input input-bordered" required />
            
           </div>
           <div className="form-control mt-6">
@@ -68,6 +70,7 @@ const PurcheasePages = () => {
           </div>
         </form>
       </div>
+        </div>
     );
 };
 

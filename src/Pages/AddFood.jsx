@@ -1,6 +1,7 @@
 
 import axios from "axios";
 import useAuthContext from "../Context/AuthContext";
+import toast from "react-hot-toast";
 
 
 const AddFood = () => {
@@ -14,7 +15,14 @@ const AddFood = () => {
       
          addedInfo.purchaseCount=0
         axios.post('http://localhost:1507/add-food',addedInfo)
-        .then(res=>console.log(res.data))        
+        .then(res=>{
+           if(res.data){
+            toast.success('Food item added successFully')
+           }
+            
+                
+            
+        })        
     }
     return (
 

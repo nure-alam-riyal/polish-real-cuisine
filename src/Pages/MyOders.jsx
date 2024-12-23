@@ -1,18 +1,51 @@
 import { useEffect, useState } from "react";
-import { FaUserEdit } from "react-icons/fa";
+
 import useAuthContext from "../Context/AuthContext";
 import axios from "axios";
 import { FcDeleteDatabase } from "react-icons/fc";
+import { format } from "date-fns";
+import Swal from "sweetalert2";
 
 
 const MyOders = () => {
     const [myOrderFoods, setMyOrdwerFoods] = useState([])
     const { user } = useAuthContext()
+    
     useEffect(() => {
+        MyOrderFoods()
+        
+    }, [user])
+    const MyOrderFoods=()=>{
         axios.get(`http://localhost:1507/puchaseFoods/${user?.email}`).then(res => {
             setMyOrdwerFoods(res.data)
-        })
-    }, [user])
+     })}
+   
+    const handleDelete=id=>{
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          }).then((result) => {
+            if (result.isConfirmed) {
+                axios.delete(`http://localhost:1507/purchaseFood/${id}`).then(res=>{
+                    console.log(res.data)
+                   MyOrderFoods()
+                   Swal.fire({
+                    title: "Deleted!",
+                    text: "Your file has been deleted.",
+                    icon: "success"
+                  });
+                })
+             
+            }
+          });
+       
+        
+    }
     // console.log(myFoods)
     return (
         <div>
@@ -56,11 +89,12 @@ const MyOders = () => {
                                                 <td>{
                                                     food?.price}</td>
                                                 <td>
-                                                    <div>{food?.buyingTime}</div>
+                                                    
+                                                    <div>{format(new Date(food?.buyingTime),'Pp')}</div>
                                                 </td>
                                                 <td>{food?.ownerName}</td>
                                                 <td className="flex justify-center items-center">
-                                                    <FcDeleteDatabase className="text-3xl  "></FcDeleteDatabase>
+                                                    <div onClick={()=>handleDelete(food?._id)}><FcDeleteDatabase className="text-3xl  "></FcDeleteDatabase></div>
                                                 </td>
                                             </tr>)
                                     }

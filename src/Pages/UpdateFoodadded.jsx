@@ -1,6 +1,7 @@
 import axios from "axios";
 import useAuthContext from "../Context/AuthContext";
 import { useLoaderData, useParams } from "react-router-dom";
+import toast from "react-hot-toast";
 
 
 const UpdateFoodadded = () => {
@@ -20,7 +21,9 @@ const UpdateFoodadded = () => {
       
          addedInfo.purchaseCount=purchaseCount
         axios.put(`http://localhost:1507/update/${id}`,addedInfo)
-        .then(res=>console.log(res.data))  
+        .then(res=>{if(res.data){
+                  toast.success('Updated successfull')
+        }})  
           
     }
     return (
@@ -94,7 +97,7 @@ const UpdateFoodadded = () => {
 
                     </div>
                     <div className="form-control mt-6">
-                        <button className="btn btn-primary">Add Item</button>
+                        <button className="btn btn-primary">Update Item</button>
                     </div>
 
                 </form>
