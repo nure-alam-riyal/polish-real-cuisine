@@ -27,10 +27,10 @@ const UpdateFoodadded = () => {
           
     }
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center my-6">
 
             <div className="card bg-base-100 w-full max-w-xl shrink-0 shadow-2xl">
-                <h1 className="text-5xl font-bold text-center">Update Food</h1>
+                <h1 className="text-5xl font-bold text-center py-6">Update Food</h1>
                 <form onSubmit={UpdateData} className="card-body">
                     <div className="lg:flex gap-6">
                         <div className="form-control lg:w-1/2">

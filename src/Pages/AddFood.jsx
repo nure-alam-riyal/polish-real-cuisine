@@ -26,10 +26,10 @@ const AddFood = () => {
     }
     return (
 
-        <div className="flex justify-center">
+        <div className="flex justify-center my-10">
 
             <div className="card bg-base-100 w-full max-w-xl shrink-0 shadow-2xl">
-                <h1 className="text-5xl font-bold text-center">Added Food</h1>
+                <h1 className="text-5xl font-bold text-center my-4">Added Food</h1>
                 <form onSubmit={addedData} className="card-body">
                     <div className="lg:flex gap-6">
                         <div className="form-control lg:w-1/2">

@@ -20,7 +20,7 @@ const MyFoods = () => {
     //     purchaseCount,ownerName
     return (
         <div>
-            <h1 className="text-4xl text-center font-bold">MY FOODS </h1>
+            <h1 className="text-4xl text-center my-4 font-bold">MY Added FOOD Items</h1>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table text-center">

@@ -49,7 +49,7 @@ const MyOders = () => {
     // console.log(myFoods)
     return (
         <div>
-                    <h1 className="text-4xl text-center font-bold">MY FOODS </h1>
+                    <h1 className="text-4xl text-center font-bold my-10">MY Order FOODS </h1>
                     <div>
                         <div className="overflow-x-auto">
                             <table className="table text-center">

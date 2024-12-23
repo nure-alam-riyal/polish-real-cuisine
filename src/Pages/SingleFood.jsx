@@ -8,7 +8,8 @@ const SingleFood = () => {
         foodOrigin,foodPhoto,foodName,foodCategory,
         purchaseCount,ownerName}=useLoaderData()
     return (
-        <div className="card lg:card-side bg-base-100 shadow-xl">
+       <div className="flex my-6 justify-center items-center">
+         <div className="card lg:card-side md:w-2/3 bg-base-100 shadow-xl">
   <figure>
     <img
       src={foodPhoto}
@@ -32,6 +33,8 @@ const SingleFood = () => {
     </div>
   </div>
 </div>
+       </div>
+       
     );
 };
 

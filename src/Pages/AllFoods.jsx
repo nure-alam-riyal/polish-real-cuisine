@@ -1,14 +1,26 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import FoodCard from "../Components/FoodCard";
+import { FaSearch } from "react-icons/fa";
 
 
 const AllFoods = () => {
+    const [search,setSearch]=useState('')
     const [toppurchesfood,setTopPurchesFoods]=useState([])
+    
     useEffect(()=>{
         axios.get('http://localhost:1507/allfoods')
         .then(res=>setTopPurchesFoods(res.data))
     },[])
+   useEffect(()=>{
+    // const handleSearch=e=>{
+        // console.log(e.target.value)
+        axios.get(`http://localhost:1507/allfoods?name=${search}`)
+               .then(res=>setTopPurchesFoods(res.data))
+       
+        //    }
+   },[search])
+   console.log(search)
     return (
        <section>
         <div className="bg-allfoodsbg mb-20 bg-cover h-[300px]">
@@ -20,7 +32,10 @@ const AllFoods = () => {
                          </div>
                          </div>
             </div>
-                       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+            <div className="my-6">
+                <div className="flex md:w-1/3 mx-auto justify-center relative"><input onChange={(e)=>setSearch(e?.target?.value)} className="p-3  w-full border rounded-lg" type="search" name="" id="" placeholder="search by food name" /> <FaSearch className="absolute top-4 left-[90%] "></FaSearch> </div>
+            </div>
+                       <div className="grid grid-cols-1 my-10 md:grid-cols-2 lg:grid-cols-3 gap-5">
                            {
                                     toppurchesfood?.map(food=><FoodCard key={food._id} food={food}></FoodCard>)
        
