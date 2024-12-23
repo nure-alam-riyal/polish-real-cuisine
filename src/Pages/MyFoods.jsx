@@ -3,17 +3,19 @@ import { useEffect, useState } from "react";
 import useAuthContext from "../Context/AuthContext";
 import { FaUserEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import Lottie from "lottie-react";
+import nodata from '../assets/lottie/NodataLottie.json'
 
 
 const MyFoods = () => {
     const [myFoods, setMyFoods] = useState([])
     const { user } = useAuthContext()
     useEffect(() => {
-        axios.get(`http://localhost:1507/foods/${user?.email}`).then(res => {
+        axios.get(`https://resturant-management-server-side.vercel.app/foods/${user?.email}`).then(res => {
             setMyFoods(res.data)
         })
     }, [user])
-    console.log(myFoods)
+    // console.log(myFoods)
     // description,Price,
     //     foodQuantity,
     //     foodOrigin,foodPhoto,foodName,foodCategory,
@@ -21,7 +23,9 @@ const MyFoods = () => {
     return (
         <div>
             <h1 className="text-4xl text-center my-4 font-bold">MY Added FOOD Items</h1>
-            <div>
+            {
+                myFoods.length ?
+                <div>
                 <div className="overflow-x-auto">
                     <table className="table text-center">
                         {/* head */}
@@ -73,6 +77,13 @@ const MyFoods = () => {
                 </div>
 
             </div>
+                :
+                <div>
+                <h1 className="text-3xl text-center font-semibold">You Have No Added Food</h1>
+                <p className="text-center text-xl font-medium text-green-400">You can add samethings</p>
+                <Lottie animationData={nodata}></Lottie>
+            </div>
+            }
         </div>
     );
 };

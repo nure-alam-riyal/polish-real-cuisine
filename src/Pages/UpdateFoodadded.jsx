@@ -20,7 +20,7 @@ const UpdateFoodadded = () => {
         addedInfo.foodQuantity=parseFloat(addedInfo.foodQuantity)
       
          addedInfo.purchaseCount=purchaseCount
-        axios.put(`http://localhost:1507/update/${id}`,addedInfo)
+        axios.put(`https://resturant-management-server-side.vercel.app/update/${id}`,addedInfo)
         .then(res=>{if(res.data){
                   toast.success('Updated successfull')
         }})  

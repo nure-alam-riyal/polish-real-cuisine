@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import google from '../../assets/google.png'
 import useAuthContext from "../../Context/AuthContext";
 import { updateProfile } from "firebase/auth";
@@ -11,6 +11,7 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const Registration = () => {
+  const navigate=useNavigate()
   const [eye, setEye] = useState(true)
   const { googleLogin, createUser } = useAuthContext()
   const handleregister = e => {
@@ -37,12 +38,14 @@ const Registration = () => {
     }
     else {
       createUser(email, password)
-        .then(result => {
-          console.log(result.user)
+        .then(() => {
+          // console.log(result.user)
           updateProfile(auth.currentUser, {
             displayName: name, photoURL: photo
           }).then(() => {
+            navigate('/')
             toast.success('registertion successfully')
+
             // ...
           }).catch(() => {
             // An error occurred
@@ -55,12 +58,13 @@ const Registration = () => {
   }
   const hangleGoogleLogIn = () => {
     googleLogin()
-      .then(result => {
-        console.log(result.user)
+      .then(() => {
+        // console.log(result.user)
+        navigate('/')
         toast.success('login successfully with google')
       })
       .catch(error => {
-        toast.error(error.massage)
+        toast.error(error.message)
       })
   }
   return (

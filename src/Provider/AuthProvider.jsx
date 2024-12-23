@@ -31,6 +31,7 @@ const AuthProvider = ({ children }) => {
     }
     const LogOut = () => {
         signOut(auth).then(() => {
+            
             toast.success('successfully Log out')
         })
             .catch(err => {
@@ -39,9 +40,10 @@ const AuthProvider = ({ children }) => {
     }
     useEffect(() => {
         const unsubScribe = onAuthStateChanged(auth, currentUser => {
+            
             setUser(currentUser)
             setLoading(false)
-            console.log(currentUser)
+            // console.log(currentUser)
 
 
             return () => unsubScribe()

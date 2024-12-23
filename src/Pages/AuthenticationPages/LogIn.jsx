@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import google from '../../assets/google.png'
 import useAuthContext from '../../Context/AuthContext';
 import toast from 'react-hot-toast';
@@ -8,29 +8,35 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 import { useState } from 'react';
 
 const LogIn = () => {
+  const navigate=useNavigate()
+  const location = useLocation()
+  const from = location?.state || '/login'
   const [eye, setEye] = useState(true)
   const { googleLogin, userLogin } = useAuthContext()
   const handleLogIn = e => {
+  
     e.preventDefault()
     const form = e.target
     const email = form.email.value
     const password = form.password.value
-    console.log(email, password)
+    // console.log(email, password)
     userLogin(email, password)
       .then(() => {
         toast.success('login successfully')
+        navigate(from)
       }
       )
       .catch(err => toast.error(err.message))
   }
   const hangleGoogleLogIn = () => {
     googleLogin()
-      .then(result => {
-        console.log(result.user)
+      .then(() => {
+        navigate(from)
+        // console.log(result.user)
         toast.success('login successfully with google')
       })
       .catch(error => {
-        toast.error(error.massage)
+        toast.error(error.message)
       })
   }
   return (

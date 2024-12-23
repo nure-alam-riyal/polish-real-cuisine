@@ -11,6 +11,7 @@ import AddFood from "../Pages/AddFood";
 import SingleFood from "../Pages/SingleFood";
 import PurcheasePages from "../Pages/PurcheasePages";
 import UpdateFoodadded from "../Pages/UpdateFoodadded";
+import PrivateRouter from "./PrivateRouter";
 
 const router = createBrowserRouter([
     {
@@ -30,10 +31,10 @@ const router = createBrowserRouter([
                 element: <Registration></Registration>
             },{
                   path:'myfoods',
-                  element:<MyFoods></MyFoods>
+                  element:<PrivateRouter><MyFoods></MyFoods></PrivateRouter>
             },
             {path:'myorders',
-                element:<MyOders></MyOders>
+                element:<PrivateRouter><MyOders></MyOders></PrivateRouter>
 
             },
             {
@@ -46,22 +47,22 @@ const router = createBrowserRouter([
 
             },{
                 path:'addfood',
-                element:<AddFood></AddFood>
+                element:<PrivateRouter><AddFood></AddFood></PrivateRouter>
 
             },{
                 path:'food/:id',
                 element:<SingleFood></SingleFood>,
-                loader:({params})=>fetch(`http://localhost:1507/food/${params.id}`)
+                loader:({params})=>fetch(`https://resturant-management-server-side.vercel.app/food/${params.id}`)
 
             },{
                 path:'/purchase/:id',
-                element:<PurcheasePages></PurcheasePages>,
-                loader:({params})=>fetch(`http://localhost:1507/food/${params.id}`)
+                element:<PrivateRouter><PurcheasePages></PurcheasePages></PrivateRouter>,
+                loader:({params})=>fetch(`https://resturant-management-server-side.vercel.app/food/${params.id}`)
 
             },{
                 path:"/update/:id",
-                element:<UpdateFoodadded></UpdateFoodadded>,
-                loader:({params})=>fetch(`http://localhost:1507/food/${params.id}`)
+                element:<PrivateRouter><UpdateFoodadded></UpdateFoodadded></PrivateRouter>,
+                loader:({params})=>fetch(`https://resturant-management-server-side.vercel.app/food/${params.id}`)
             }
         ]
     }

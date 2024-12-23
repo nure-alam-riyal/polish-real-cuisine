@@ -9,18 +9,18 @@ const AllFoods = () => {
     const [toppurchesfood,setTopPurchesFoods]=useState([])
     
     useEffect(()=>{
-        axios.get('http://localhost:1507/allfoods')
+        axios.get('https://resturant-management-server-side.vercel.app/allfoods')
         .then(res=>setTopPurchesFoods(res.data))
     },[])
    useEffect(()=>{
     // const handleSearch=e=>{
         // console.log(e.target.value)
-        axios.get(`http://localhost:1507/allfoods?name=${search}`)
+        axios.get(`https://resturant-management-server-side.vercel.app/allfoods?name=${search}`)
                .then(res=>setTopPurchesFoods(res.data))
        
         //    }
    },[search])
-   console.log(search)
+//    console.log(search)
     return (
        <section>
         <div className="bg-allfoodsbg mb-20 bg-cover h-[300px]">

@@ -1,4 +1,4 @@
-import {  useLoaderData } from "react-router-dom";
+import {  useLoaderData, useNavigate } from "react-router-dom";
 import useAuthContext from "../Context/AuthContext";
 import axios from "axios";
 import Lottie from "lottie-react";
@@ -8,6 +8,7 @@ import toast from "react-hot-toast";
 
 
 const PurcheasePages = () => {
+  const navigate=useNavigate()
   const [error,SetError]=useState('')
   const [errorBuyer,SetBuyerError]=useState('')
   // const [error,SetError]=useState('')
@@ -32,12 +33,13 @@ const PurcheasePages = () => {
                 return SetError(`Not Enough food to buy.Has ${foodQuantity}`)
                }
                else{
-                axios.post('http://localhost:1507/purchased-foods',purchasedData)
+                axios.post('https://resturant-management-server-side.vercel.app/purchased-foods',purchasedData)
                 .then((res)=>{
                   if(res.data)
                     SetError('')
                   SetBuyerError('')
                   toast.success('Purchase Food')
+                  navigate('/myorders')
                 })
                }
 
@@ -45,9 +47,9 @@ const PurcheasePages = () => {
 
         }
     return (
-        <div className="lg:flex my-10 justify-center items-center gap-20">
-          <div><Lottie className="w-96 h-96 rounded-full" animationData={lottiepur}></Lottie></div>
-          <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="lg:flex flex-row-reverse my-10 justify-center items-center gap-20">
+         
+          <div className="card bg-base-100 w-full flex justify-center mx-auto max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handlePurchase} className="card-body">
           <div className="form-control">
             <label className="label">
@@ -103,6 +105,7 @@ const PurcheasePages = () => {
           </div>
         </form>
       </div>
+      <div className="flex justify-center my-9"><Lottie className="w-80 h-80 lg:w-96 lg:h-96 rounded-full" animationData={lottiepur}></Lottie></div>
         </div>
     );
 };

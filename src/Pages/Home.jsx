@@ -13,7 +13,7 @@ import Slider from "../Components/Slider";
 const Home = () => {
     const [toppurchesfood,setTopPurchesFoods]=useState([])
     useEffect(()=>{
-        axios.get('http://localhost:1507/foods')
+        axios.get('https://resturant-management-server-side.vercel.app/foods')
         .then(res=>setTopPurchesFoods(res.data))
     },[])
     return (

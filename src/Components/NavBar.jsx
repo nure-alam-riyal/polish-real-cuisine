@@ -1,6 +1,7 @@
 import { Link, NavLink } from "react-router-dom";
 import useAuthContext from "../Context/AuthContext";
-
+import 'react-tooltip/dist/react-tooltip.css'
+import { Tooltip } from "react-tooltip";
 
 const NavBar = () => {
     const {user, LogOut}=useAuthContext()
@@ -56,9 +57,13 @@ const NavBar = () => {
                         <div className="dropdown dropdown-end">
       <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
-        <img className="w-12 h-12 rounded-full" referrerPolicy="no-referrer" src={user?.photoURL} alt="userName" />
+        <img id="riyal" className="w-12 h-12 rounded-full" referrerPolicy="no-referrer" src={user?.photoURL} alt="userName" />
         </div>
       </div>
+      <Tooltip position='left' anchorSelect="#riyal">
+        <h3 className="text-center">{user?.displayName}</h3>
+        <p className="text-center">{user?.email}</p>
+      </Tooltip>
       <ul
         tabIndex={0}
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
