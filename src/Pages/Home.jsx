@@ -4,6 +4,7 @@ import FoodCard from "../Components/FoodCard";
 import { Link } from "react-router-dom";
 import Slider from "../Components/Slider";
 import WecomeMyResturant from "../Components/WecomeMyResturant";
+import NavBar from "../Components/NavBar";
 
 
 
@@ -19,6 +20,7 @@ const Home = () => {
     },[])
     return (
         <div>
+           <div className="hidden"> <NavBar></NavBar></div>
             <section>
                 <Slider></Slider>
             </section>
@@ -43,6 +45,21 @@ const Home = () => {
             <div>
                 <WecomeMyResturant></WecomeMyResturant>
             </div>
+            <section className="bg-sce3 bg-cover bg-center my-16 rounded-lg">
+                <div> <div className="flex justify-center items-center text-center py-3  mt-6 mb-10">
+                    <div className="md:w-2/3 text-center">
+                        <div className="flex justify-center my-2"><img className="w-40 h-32 rounded-full"  alt="" /></div>
+                        <p className="text-4xl font-bold font-rancho text-emerald-950">SubScribe to our website</p>
+                    </div>
+                </div>
+                </div>
+                <div className="w-11/12 md:w-2/3 lg:w-1/2 pb-10 mx-auto">
+                    <div><input className="border w-full p-4 my-2 rounded-lg" type="email" name="" id="" placeholder="Enter your Email" /></div>
+                    <div><textarea className="border w-full p-4 rounded-lg" name="" id="" cols="5" placeholder="Your Comments" rows="5"></textarea></div>
+                </div>
+                <div className="text-center pb-5"><button className="btn bg-blue-400">Subscibe</button></div>
+
+            </section>
         </div>
     );
 };

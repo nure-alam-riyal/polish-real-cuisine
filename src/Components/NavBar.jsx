@@ -3,6 +3,7 @@ import useAuthContext from "../Context/AuthContext";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from "react-tooltip";
 import logo from '../assets/bgImages/logo.png'
+import Themenanging from "./Themenanging";
 
 const NavBar = () => {
     const {user, LogOut}=useAuthContext()
@@ -12,16 +13,18 @@ const NavBar = () => {
       <li className="px-4"><NavLink to='/myorders'>My Order</NavLink></li>
    </>
              
-    const links = <>
+    const links = 
+    <>
        <li className="px-4"> <NavLink className=""  to='/'>        Home</NavLink></li>
        <li className="px-4"> <NavLink className=""  to='/allfoods'>All Foods</NavLink></li>
        <li className="px-4"> <NavLink className=""  to='/gallery'> Gallery</NavLink></li>
-            </>
+       <li className="px-4"><Themenanging></Themenanging></li>
+  </>
     return (
         <div className="navbar mx-auto w-11/12 bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
-                    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                    <div tabIndex="0" role="button" className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -36,8 +39,8 @@ const NavBar = () => {
                         </svg>
                     </div>
                     <ul
-                        tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                        tabIndex="0"
+                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
                         {links}
                     </ul>
                 </div>
@@ -47,7 +50,7 @@ const NavBar = () => {
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal px-1">
+                <ul className="menu menu-horizontal  px-1">
                     {links}
                 </ul>
             </div>
@@ -56,7 +59,7 @@ const NavBar = () => {
                     user?
                     <div className="flex items-center gap-2">
                         <div className="dropdown dropdown-end">
-      <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
+      <div tabIndex="0" role="button" className="btn btn-ghost btn-circle avatar">
         <div className="w-10 rounded-full">
         <img id="riyal" className="w-12 h-12 rounded-full" referrerPolicy="no-referrer" src={user?.photoURL} alt="userName" />
         </div>
@@ -66,8 +69,8 @@ const NavBar = () => {
         <p className="text-center">{user?.email}</p>
       </Tooltip>
       <ul
-        tabIndex={0}
-        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+        tabIndex="0"
+        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow">
         {links2}
       </ul>
     </div>

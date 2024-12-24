@@ -10,7 +10,7 @@ import { useState } from 'react';
 const LogIn = () => {
   const navigate=useNavigate()
   const location = useLocation()
-  const from = location?.state || '/login'
+  const from = location?.state || '/'
   const [eye, setEye] = useState(true)
   const { googleLogin, userLogin } = useAuthContext()
   const handleLogIn = e => {
