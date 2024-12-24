@@ -20,6 +20,7 @@ const Slider = () => {
                 pagination={{
                     clickable: true,
                 }}
+               
                 loop={true}
                 navigation={true}
                 modules={[Autoplay, Pagination, Navigation]}

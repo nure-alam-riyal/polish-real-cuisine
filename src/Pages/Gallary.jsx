@@ -31,6 +31,7 @@ const Gallary = () => {
             <div>
                 <div className='grid gap-1 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'>
                     
+                    <img className='hover:scale-110 h-72 w-full' src={image1} alt="" />
                     <img className='hover:scale-110 h-72 w-full' src={image2} alt="" />
                     <img className='hover:scale-110 h-72 w-full' src={image3} alt="" />
                     <img className='hover:scale-110 h-72 w-full' src={image4} alt="" />
