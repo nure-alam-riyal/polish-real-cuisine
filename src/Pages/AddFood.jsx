@@ -3,6 +3,7 @@ import axios from "axios";
 import useAuthContext from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 
 const AddFood = () => {
@@ -30,7 +31,9 @@ const AddFood = () => {
     return (
 
         <div className="flex justify-center my-10">
-
+<Helmet>
+    <title>AddFood |Riyal`s Cuisine</title>
+</Helmet>
             <div className="card bg-base-100 w-full max-w-xl shrink-0 shadow-2xl">
                 <h1 className="text-5xl font-bold text-center my-4">Added Food</h1>
                 <form onSubmit={addedData} className="card-body">

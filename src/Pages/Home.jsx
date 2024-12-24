@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import Slider from "../Components/Slider";
 import WecomeMyResturant from "../Components/WecomeMyResturant";
 import NavBar from "../Components/NavBar";
+import logo from '../assets/bgImages/logo.png'
+import MenuSection from "../Components/MenuSection";
+import { Slide } from "react-awesome-reveal";
+import { Helmet } from "react-helmet";
 
 
 
@@ -20,6 +24,9 @@ const Home = () => {
     },[])
     return (
         <div>
+            <Helmet>
+    <title>Riyal`s Cuisine</title>
+</Helmet>
            <div className="hidden"> <NavBar></NavBar></div>
             <section>
                 <Slider></Slider>
@@ -27,10 +34,10 @@ const Home = () => {
             <section>
             <div> <div className="flex justify-center items-center text-center  mt-6 mb-10">
                     <div className="md:w-2/3">
-                    {/* <Slide> */}
+                    <Slide direction="right">
                         <h2 className="font-bold   text-3xl">Top Food Item</h2>
                         <p className="my-4"> A highly popular or frequently consumed dish or ingredient, often celebrated for its taste, nutritional value, or cultural significance in a specific context.</p>
-                        {/* </Slide> */}
+                        </Slide>
                      </div>
                 </div>
                 </div>
@@ -45,10 +52,13 @@ const Home = () => {
             <div>
                 <WecomeMyResturant></WecomeMyResturant>
             </div>
-            <section className="bg-sce3 bg-cover bg-center my-16 rounded-lg">
+            <div>
+                <MenuSection></MenuSection>
+            </div>
+            <section className="bg-green-100 my-5 rounded-lg">
                 <div> <div className="flex justify-center items-center text-center py-3  mt-6 mb-10">
                     <div className="md:w-2/3 text-center">
-                        <div className="flex justify-center my-2"><img className="w-40 h-32 rounded-full"  alt="" /></div>
+                        <div className="flex justify-center my-2"><img className="w-40 h-32 object-cover rounded-full" src={logo} alt="" /></div>
                         <p className="text-4xl font-bold font-rancho text-emerald-950">SubScribe to our website</p>
                     </div>
                 </div>

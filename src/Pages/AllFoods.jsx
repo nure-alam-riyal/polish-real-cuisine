@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import FoodCard from "../Components/FoodCard";
 import { FaSearch } from "react-icons/fa";
+import { Helmet } from "react-helmet";
 
 
 const AllFoods = () => {
@@ -23,6 +24,9 @@ const AllFoods = () => {
 //    console.log(search)
     return (
        <section>
+        <Helmet>
+    <title>AllFoods |Riyal`s Cuisine</title>
+</Helmet>
         <div className="bg-allfoodsbg mb-20 bg-cover h-[300px]">
             <div className="w-full h-full flex items-center justify-center text-center">
                          <div className="text-center text-green-700 md:w-10/12 lg:w-8/12">

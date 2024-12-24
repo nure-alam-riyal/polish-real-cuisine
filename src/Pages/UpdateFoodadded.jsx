@@ -2,6 +2,7 @@ import axios from "axios";
 import useAuthContext from "../Context/AuthContext";
 import { useLoaderData, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 
 const UpdateFoodadded = () => {
@@ -28,7 +29,9 @@ const UpdateFoodadded = () => {
     }
     return (
         <div className="flex justify-center my-6">
-
+<Helmet>
+    <title>UpdateFoodData |Riyal`s Cuisine</title>
+</Helmet>
             <div className="card bg-base-100 w-full max-w-xl shrink-0 shadow-2xl">
                 <h1 className="text-5xl font-bold text-center py-6">Update Food</h1>
                 <form onSubmit={UpdateData} className="card-body">

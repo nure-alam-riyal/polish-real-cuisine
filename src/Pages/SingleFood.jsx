@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { Link, useLoaderData } from "react-router-dom";
 
 
@@ -9,6 +10,9 @@ const SingleFood = () => {
         purchaseCount,ownerName}=useLoaderData()
     return (
        <div className="flex my-6 justify-center items-center">
+        <Helmet>
+    <title>SingleFood |Riyal`s Cuisine</title>
+</Helmet>
          <div className="card lg:card-side md:w-2/3 bg-base-100 shadow-xl">
   <figure>
     <img

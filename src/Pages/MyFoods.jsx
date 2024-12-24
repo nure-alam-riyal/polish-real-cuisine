@@ -5,6 +5,7 @@ import { FaUserEdit } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import nodata from '../assets/lottie/NodataLottie.json'
+import { Helmet } from "react-helmet";
 
 
 const MyFoods = () => {
@@ -22,6 +23,9 @@ const MyFoods = () => {
     //     purchaseCount,ownerName
     return (
         <div>
+            <Helmet>
+    <title>Myfoods|Riyal`s Cuisine</title>
+</Helmet>
             <h1 className="text-4xl text-center my-4 font-bold">MY Added FOOD Items</h1>
             {
                 myFoods.length ?

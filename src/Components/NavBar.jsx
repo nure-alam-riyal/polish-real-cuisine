@@ -45,7 +45,7 @@ const NavBar = () => {
                     </ul>
                 </div>
                 <div className="flex ">
-                    <img className="w-14 h-14 rounded-full" src={logo} alt="" />
+                    <img className="w-14 h-14 hidden md:flex rounded-full" src={logo} alt="" />
                 <div className="btn btn-ghost text-xl">Riyal`s Cuisine</div>
                 </div>
             </div>

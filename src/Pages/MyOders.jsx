@@ -6,6 +6,7 @@ import { FcDeleteDatabase } from "react-icons/fc";
 import { format } from "date-fns";
 import Swal from "sweetalert2";
 import Lottie from "lottie-react";
+import { Helmet } from "react-helmet";
 
 
 const MyOders = () => {
@@ -50,6 +51,9 @@ const MyOders = () => {
     // console.log(myFoods)
     return (
         <div>
+            <Helmet>
+    <title>MyOrders |Riyal`s Cuisine</title>
+</Helmet>
                     <h1 className="text-4xl text-center font-bold my-10">MY Order FOODS </h1>
                   {
                     myOrderFoods.length ?

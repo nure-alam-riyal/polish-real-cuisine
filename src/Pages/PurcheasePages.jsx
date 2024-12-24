@@ -5,6 +5,7 @@ import Lottie from "lottie-react";
 import lottiepur from '../assets/lottie/purchase.json'
 import { useState } from "react";
 import toast from "react-hot-toast";
+import { Helmet } from "react-helmet";
 
 
 const PurcheasePages = () => {
@@ -48,7 +49,9 @@ const PurcheasePages = () => {
         }
     return (
         <div className="lg:flex flex-row-reverse my-10 justify-center items-center gap-20">
-         
+         <Helmet>
+    <title>Purchase |Riyal`s Cuisine</title>
+</Helmet>
           <div className="card bg-base-100 w-full flex justify-center mx-auto max-w-sm shrink-0 shadow-2xl">
         <form onSubmit={handlePurchase} className="card-body">
           <div className="form-control">
