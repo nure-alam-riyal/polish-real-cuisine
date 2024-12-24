@@ -2,6 +2,7 @@ import { Link, NavLink } from "react-router-dom";
 import useAuthContext from "../Context/AuthContext";
 import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from "react-tooltip";
+import logo from '../assets/bgImages/logo.png'
 
 const NavBar = () => {
     const {user, LogOut}=useAuthContext()
@@ -40,8 +41,8 @@ const NavBar = () => {
                         {links}
                     </ul>
                 </div>
-                <div>
-                    <img src="" alt="" />
+                <div className="flex ">
+                    <img className="w-14 h-14 rounded-full" src={logo} alt="" />
                 <div className="btn btn-ghost text-xl">Riyal`s Cuisine</div>
                 </div>
             </div>
