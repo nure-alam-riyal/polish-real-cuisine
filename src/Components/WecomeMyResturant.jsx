@@ -12,6 +12,7 @@ import image4 from '../assets/bgImages/g4avif.avif'
 import image5 from '../assets/bgImages/g5avif.avif'
 import image6 from '../assets/bgImages/g6.avif'
 import { Fade } from "react-awesome-reveal";
+import { motion } from 'framer-motion'
 
 
 
@@ -41,7 +42,21 @@ const WecomeMyResturant = () => {
     </div>
     <div className="w-full lg:w-1/2 mx-auto ml-0 " >
     <Fade direction="top-left">
-      <h1 className="text-5xl font-bold font-Handlee">WelCome <br />Riyal`s Cuisine Resturant</h1>
+      <h1 className="text-5xl font-bold font-Handlee"><motion.p
+      animate={{
+        color:["#ff0000", "#00ff00", "#0000ff", "#ff0000","#1233g","#fcdb03","#db03fc","#0390fc","#24fc03"],
+        transition:{duration:'10',repeat:Infinity}
+      }}
+      >WelCome </motion.p><br />
+      <motion.p 
+      animate={{x:[0,100,0],
+        color:["#ff0000", "#00ff00", "#0000ff", "#ff0000"],
+        transition:{duration:'5',repeat:Infinity}
+      }
+     
+    
+      }>
+      Riyal`s Cuisine Resturant</motion.p></h1>
       <h3 className="text-lg font-semibold my-4"> A warm greeting inviting guests to experience a dining establishment known for its unique flavors, exceptional service, and a delightful culinary journey.</h3>
       <p className="py-4">
       heartfelt invitation to explore a world of exquisite flavors and authentic dishes. This dining destination prides itself on exceptional hospitality, a cozy ambiance, and a menu crafted to delight every palate. Experience culinary artistry and unforgettable moments at Riyals Cuisine Restaurant, where flavor meets passion

@@ -4,6 +4,7 @@ import 'react-tooltip/dist/react-tooltip.css'
 import { Tooltip } from "react-tooltip";
 import logo from '../assets/bgImages/logo.png'
 import Themenanging from "./Themenanging";
+import { motion } from 'framer-motion'
 
 const NavBar = () => {
     const {user, LogOut}=useAuthContext()
@@ -46,7 +47,11 @@ const NavBar = () => {
                 </div>
                 <div className="flex ">
                     <img className="w-14 h-14 hidden md:flex rounded-full" src={logo} alt="" />
-                <div className="btn btn-ghost text-xl font-Handlee">Riyal`s Cuisine</div>
+                <motion.div
+                animate={{color:["#ff0000", "#00ff00", "#0000ff", "#ff0000","#1233g","#fcdb03","#db03fc","#0390fc","#24fc03"],
+                    transition:{duration:20,repeat:Infinity}
+                }}
+                className="btn btn-ghost text-xl font-Handlee">Riyal`s Cuisine</motion.div>
                 </div>
             </div>
             <div className="navbar-center hidden lg:flex">

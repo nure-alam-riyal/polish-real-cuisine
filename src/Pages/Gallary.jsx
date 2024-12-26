@@ -16,6 +16,7 @@ import image15 from '../assets/bgImages/g15.jpg'
 import image16 from '../assets/bgImages/g16.avif'
 import { Helmet } from 'react-helmet'
 
+
 import "yet-another-react-lightbox/styles.css";
 
 
@@ -24,6 +25,7 @@ import React from 'react'
 import {Lightbox} from 'yet-another-react-lightbox'
 import useAuthContext from '../Context/AuthContext'
 import { Fade, Slide } from 'react-awesome-reveal'
+
 
 // import { initLightboxJS, SlideshowLightbox } from 'lightbox.js-react'
 // import { useEffect } from 'react'
