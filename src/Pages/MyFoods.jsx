@@ -69,10 +69,10 @@ const MyFoods = () => {
                                         <td>
                                             {food?.foodName}
                                         </td>
-                                        <td>{
-                                            food?.Price}</td>
-                                        <td className="flex items-center justify-center">
-                                            <button className="btn btn-ghost btn-xs">{food?.purchaseCount} < FaBangladeshiTakaSign  /></button>
+                                        <td className="flex items-center justify-center">{
+                                            food?.Price} < FaBangladeshiTakaSign  /></td>
+                                        <td >
+                                            <button className="btn btn-ghost btn-xs">{food?.purchaseCount} </button>
                                         </td>
                                         <td className="flex justify-center items-center">
                                             <Link to={`/update/${food?._id}`} className='hover:btn'><FaUserEdit className="text-3xl "></FaUserEdit></Link>
