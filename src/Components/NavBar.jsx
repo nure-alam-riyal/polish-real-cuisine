@@ -8,17 +8,17 @@ import Themenanging from "./Themenanging";
 const NavBar = () => {
     const {user, LogOut}=useAuthContext()
     const links2=<>
-      <li className="px-4"><NavLink to='/myfoods'> My Foods</NavLink></li>
-      <li className="px-4"><NavLink to='/addfood'> Add Food</NavLink></li>
-      <li className="px-4"><NavLink to='/myorders'>My Order</NavLink></li>
+      <li className="px-4 text-xl font-semibold"><NavLink to='/myfoods'> My Foods</NavLink></li>
+      <li className="px-4 text-xl font-semibold"><NavLink to='/addfood'> Add Food</NavLink></li>
+      <li className="px-4 text-xl font-semibold"><NavLink to='/myorders'>My Order</NavLink></li>
    </>
              
     const links = 
     <>
-       <li className="px-4"> <NavLink className=""  to='/'>        Home</NavLink></li>
-       <li className="px-4"> <NavLink className=""  to='/allfoods'>All Foods</NavLink></li>
-       <li className="px-4"> <NavLink className=""  to='/gallery'> Gallery</NavLink></li>
-       <li className="px-4"><Themenanging></Themenanging></li>
+       <li className="px-4 text-xl font-semibold"> <NavLink className=""  to='/'>        Home</NavLink></li>
+       <li className="px-4 text-xl font-semibold"> <NavLink className=""  to='/allfoods'>All Foods</NavLink></li>
+       <li className="px-4 text-xl font-semibold"> <NavLink className=""  to='/gallery'> Gallery</NavLink></li>
+       <li className="px-4 text-xl font-semibold"><Themenanging></Themenanging></li>
   </>
     return (
         <div className="navbar mx-auto w-11/12 bg-base-100">
@@ -75,9 +75,9 @@ const NavBar = () => {
       </ul>
     </div>
                         
-                        <Link onClick={ LogOut} className="btn bg-blue-300" to='login'>Log Out</Link></div>
+                        <Link onClick={ LogOut} className="btn font-bold text-lg bg-blue-300" to='login'>Log Out</Link></div>
                     :
-                    <div><Link className="btn bg-blue-300" to='login'>Log In</Link></div>
+                    <div><Link className="btn text-lg font-bold bg-blue-300" to='login'>Log In</Link></div>
                 }
             </div>
         </div>

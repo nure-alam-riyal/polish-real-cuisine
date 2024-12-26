@@ -23,6 +23,7 @@ import { Fullscreen, Thumbnails, Zoom } from 'yet-another-react-lightbox/plugins
 import React from 'react'
 import {Lightbox} from 'yet-another-react-lightbox'
 import useAuthContext from '../Context/AuthContext'
+import { Fade, Slide } from 'react-awesome-reveal'
 
 // import { initLightboxJS, SlideshowLightbox } from 'lightbox.js-react'
 // import { useEffect } from 'react'
@@ -42,11 +43,14 @@ const Gallary = () => {
             <div className="bg-gallarybg mb-20 bg-cover h-[300px]">
                 <div className="w-full h-full flex items-center justify-center text-center">
                     <div className="text-center text-green-700 md:w-10/12 lg:w-8/12">
-                        <h1 className="text-center text-4xl font-bold">Track Every Order in Real Time to Enhance Service Quality</h1>
-                        <p className="my-5 text-white">Exceed customer expectations by optimizing operations, enhancing service quality, and creating unforgettable moments that keep diners returning for more.</p>
+                    <Fade direction="top-left">  <h1 className="text-center text-4xl font-bold">Track Every Order in Real Time to Enhance Service Quality</h1></Fade>
+                    <Fade direction="bottom-right">  <p className="my-5 text-white">Exceed customer expectations by optimizing operations, enhancing service quality, and creating unforgettable moments that keep diners returning for more.</p></Fade>
 
                     </div>
                 </div>
+            </div>
+            <div>
+               <Slide direction='left'> <p className='text-center font-Handlee text-blue-400 my-6 font-bold text-4xl'>Gallary</p></Slide>
             </div>
             <div>
                 <Lightbox

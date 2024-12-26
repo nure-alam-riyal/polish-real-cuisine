@@ -9,6 +9,7 @@ import { Helmet } from "react-helmet";
 import useAxiosSecure from "../Context/useAxiosSecure";
 
 
+
 const MyFoods = () => {
     const [myFoods, setMyFoods] = useState([])
     const { user } = useAuthContext()
@@ -35,7 +36,7 @@ const MyFoods = () => {
                 <div className="overflow-x-auto">
                     <table className="table text-center">
                         {/* head */}
-                        <thead className="text-2xl font-bold ">
+                        <thead className="text-2xl  font-bold ">
                             <tr>
                                 <th>NO.</th>
                                 <th>Image</th>
@@ -49,6 +50,7 @@ const MyFoods = () => {
                             {
                                 myFoods?.map((food, index) =>
                                     <tr key={food._id}>
+                                        
                                         <th>
                                             <label>
                                                 {index + 1}
@@ -74,6 +76,7 @@ const MyFoods = () => {
                                         <td className="flex justify-center items-center">
                                             <Link to={`/update/${food?._id}`} className='hover:btn'><FaUserEdit className="text-3xl "></FaUserEdit></Link>
                                         </td>
+                                     
                                     </tr>)
                             }
 

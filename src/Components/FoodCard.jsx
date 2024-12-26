@@ -1,5 +1,6 @@
 
 import PropTypes from 'prop-types'
+import { Fade } from 'react-awesome-reveal';
 import { Link } from 'react-router-dom';
 const FoodCard = ({ food }) => {
     const { _id,
@@ -8,10 +9,11 @@ const FoodCard = ({ food }) => {
         purchaseCount } = food || {}
     return (
         <div className="card glass ">
-            <figure>
-                <img
+           <Fade direction='down'>
+           <figure>
+                <img className='w-full h-80 rounded-lg' referrerPolicy='no-referrer'
                     src={foodPhoto}
-                    alt="car!" />
+                    alt={foodName}/>
             </figure>
             <div className="card-body">
                 <h2 className="card-title">Food Name:{foodName}</h2>
@@ -21,6 +23,7 @@ const FoodCard = ({ food }) => {
                     <Link to={`/food/${_id}`}><button className="btn btn-primary">Details</button></Link>
                 </div>
             </div>
+           </Fade>
         </div>
     );
 };

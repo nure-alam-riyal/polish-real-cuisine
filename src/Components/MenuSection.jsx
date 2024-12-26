@@ -7,7 +7,7 @@ const MenuSection = () => {
         <div className='bg-black p-10 text-white'>
             <div className="lg:flex ">
                 <div className='lg:w-1/2'>
-               <Fade direction='up'> <h2 className='text-4xl font-bold'>Restaurant <br /><span>MENU</span></h2></Fade>
+               <Fade direction='up'> <h2 className='text-4xl font-bold font-Handlee'>Restaurant <br /><span>MENU</span></h2></Fade>
                 <div className='grid grid-cols-1 md:grid-cols-2 '>
                     <Slide direction='left'>
                     <div className='my-4'>

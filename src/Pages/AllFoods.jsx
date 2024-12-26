@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import FoodCard from "../Components/FoodCard";
 import { FaSearch } from "react-icons/fa";
 import { Helmet } from "react-helmet";
+import { Fade } from "react-awesome-reveal";
 
 
 const AllFoods = () => {
@@ -29,11 +30,11 @@ const AllFoods = () => {
         <Helmet>
     <title>AllFoods |Riyal`s Cuisine</title>
 </Helmet>
-        <div className="bg-allfoodsbg mb-20 bg-cover h-[300px]">
+        <div className="bg-allfoodsbg mb-20 bg-cover h-[300px] rounded-lg">
             <div className="w-full h-full flex items-center justify-center text-center">
                          <div className="text-center text-green-700 md:w-10/12 lg:w-8/12">
-                            <h1 className="text-center text-4xl font-bold">Track Every Order in Real Time to Enhance Service Quality</h1>
-                            <p className="my-5 text-white">Exceed customer expectations by optimizing operations, enhancing service quality, and creating unforgettable moments that keep diners returning for more.</p>
+                         <Fade direction="top-right"> <h1 className="text-center text-red-950 text-4xl font-Handlee font-bold">Track Every Order in Real Time to Enhance Service Quality</h1></Fade>
+                         <Fade direction="bottom-left">  <p className="my-5  text-white">Exceed customer expectations by optimizing operations, enhancing service quality, and creating unforgettable moments that keep diners returning for more.</p></Fade>
                            
                          </div>
                          </div>

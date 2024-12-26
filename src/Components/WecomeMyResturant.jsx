@@ -11,10 +11,8 @@ import image3 from '../assets/bgImages/g3.avif'
 import image4 from '../assets/bgImages/g4avif.avif'
 import image5 from '../assets/bgImages/g5avif.avif'
 import image6 from '../assets/bgImages/g6.avif'
-import image7 from '../assets/bgImages/g7.avif'
-import image8 from '../assets/bgImages/g8.avif'
-import image9 from '../assets/bgImages/g9.avif'
-import image10 from '../assets/bgImages/g10.avif'
+import { Fade } from "react-awesome-reveal";
+
 
 
 const WecomeMyResturant = () => {
@@ -37,19 +35,19 @@ const WecomeMyResturant = () => {
       <SwiperSlide ><img className='hover:scale-110 rounded-2xl h-72 w-[420px]' src={image4} alt="" /></SwiperSlide>
       <SwiperSlide ><img className='hover:scale-110 rounded-2xl h-72 w-[420px]' src={image5} alt="" /></SwiperSlide>
       <SwiperSlide ><img className='hover:scale-110 rounded-2xl h-72 w-[420px]' src={image6} alt="" /></SwiperSlide>
-      {/* <SwiperSlide ><img className='hover:scale-110 h-72 w-[420px]' src={image7} alt="" /></SwiperSlide>
-      <SwiperSlide ><img className='hover:scale-110 h-72 w-[420px]' src={image8} alt="" /></SwiperSlide>
-      <SwiperSlide ><img className='hover:scale-110 h-72 w-[420px]' src={image9} alt="" /></SwiperSlide> */}
+     
       </Swiper>
   </div>
     </div>
     <div className="w-full lg:w-1/2 mx-auto ml-0 " >
-      <h1 className="text-5xl font-bold">WelCome <br />Riyal`s Cuisine Resturant</h1>
+    <Fade direction="top-left">
+      <h1 className="text-5xl font-bold font-Handlee">WelCome <br />Riyal`s Cuisine Resturant</h1>
       <h3 className="text-lg font-semibold my-4"> A warm greeting inviting guests to experience a dining establishment known for its unique flavors, exceptional service, and a delightful culinary journey.</h3>
       <p className="py-4">
       heartfelt invitation to explore a world of exquisite flavors and authentic dishes. This dining destination prides itself on exceptional hospitality, a cozy ambiance, and a menu crafted to delight every palate. Experience culinary artistry and unforgettable moments at Riyals Cuisine Restaurant, where flavor meets passion
       </p>
-     <Link to='/gallery'> <button className="btn btn-primary">GO Our Gallary <FaArrowAltCircleRight></FaArrowAltCircleRight></button></Link>
+     <Link to='/gallery'> <button className="btn btn-primary font-semibold font-Handlee">GO Our Gallary <FaArrowAltCircleRight></FaArrowAltCircleRight></button></Link>
+     </Fade>
     </div>
   </div>
 </div>

@@ -10,6 +10,7 @@ import { Helmet } from "react-helmet";
 import useAxiosSecure from "../Context/useAxiosSecure";
 
 
+
 const MyOders = () => {
     const [myOrderFoods, setMyOrdwerFoods] = useState([])
     const { user } = useAuthContext()
@@ -76,7 +77,9 @@ const MyOders = () => {
                             <tbody>
                                 {
                                     myOrderFoods?.map((food, index) =>
+                                        
                                         <tr key={food._id}>
+                                           
                                             <th>
                                                 <label>
                                                     {index + 1}
@@ -104,7 +107,9 @@ const MyOders = () => {
                                             <td className="flex justify-center items-center">
                                                 <div onClick={()=>handleDelete(food?._id)}><FcDeleteDatabase className="text-3xl  "></FcDeleteDatabase></div>
                                             </td>
-                                        </tr>)
+                                           
+                                        </tr>
+                                        )
                                 }
     
                             </tbody>

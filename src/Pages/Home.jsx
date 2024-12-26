@@ -35,7 +35,7 @@ const Home = () => {
             <div> <div className="flex justify-center items-center text-center  mt-6 mb-10">
                     <div className="md:w-2/3">
                     <Slide direction="right">
-                        <h2 className="font-bold   text-3xl">Top Food Item</h2>
+                        <h2 className="font-bold font-Handlee   text-3xl">Top Food Item</h2>
                         <p className="my-4"> A highly popular or frequently consumed dish or ingredient, often celebrated for its taste, nutritional value, or cultural significance in a specific context.</p>
                         </Slide>
                      </div>
@@ -59,7 +59,7 @@ const Home = () => {
                 <div> <div className="flex justify-center items-center text-center py-3  mt-6 mb-10">
                     <div className="md:w-2/3 text-center">
                         <div className="flex justify-center my-2"><img className="w-40 h-32 object-cover rounded-full" src={logo} alt="" /></div>
-                        <p className="text-4xl font-bold font-rancho text-emerald-950">SubScribe to our website</p>
+                        <p className="text-4xl font-bold font-Handlee text-emerald-950">SubScribe to our website</p>
                     </div>
                 </div>
                 </div>
@@ -67,7 +67,7 @@ const Home = () => {
                     <div><input className="border w-full p-4 my-2 rounded-lg" type="email" name="" id="" placeholder="Enter your Email" /></div>
                     <div><textarea className="border w-full p-4 rounded-lg" name="" id="" cols="5" placeholder="Your Comments" rows="5"></textarea></div>
                 </div>
-                <div className="text-center pb-5"><button className="btn bg-blue-400">Subscibe</button></div>
+                <div className="text-center pb-5"><button className="btn font-semibold bg-blue-400">Subscibe</button></div>
 
             </section>
         </div>
