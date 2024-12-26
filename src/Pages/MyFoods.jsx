@@ -1,4 +1,4 @@
-import axios from "axios";
+
 import { useEffect, useState } from "react";
 import useAuthContext from "../Context/AuthContext";
 import { FaUserEdit } from "react-icons/fa";
@@ -6,13 +6,15 @@ import { Link } from "react-router-dom";
 import Lottie from "lottie-react";
 import nodata from '../assets/lottie/NodataLottie.json'
 import { Helmet } from "react-helmet";
+import useAxiosSecure from "../Context/useAxiosSecure";
 
 
 const MyFoods = () => {
     const [myFoods, setMyFoods] = useState([])
     const { user } = useAuthContext()
+   const instanceAxios=useAxiosSecure()
     useEffect(() => {
-        axios.get(`https://resturant-management-server-side.vercel.app/foods/${user?.email}`).then(res => {
+        instanceAxios.get(`/foods/${user?.email}`).then(res => {
             setMyFoods(res.data)
         })
     }, [user])

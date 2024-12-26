@@ -10,6 +10,7 @@ import PropTypes from 'prop-types'
 import { createContext, useEffect, useState } from 'react';
 import auth from '../FireBase/FireBase';
 import toast from 'react-hot-toast';
+import axios from 'axios';
 
 export const DataContext = createContext(null)
 const AuthProvider = ({ children }) => {
@@ -40,9 +41,25 @@ const AuthProvider = ({ children }) => {
     }
     useEffect(() => {
         const unsubScribe = onAuthStateChanged(auth, currentUser => {
-            
             setUser(currentUser)
-            setLoading(false)
+            if(currentUser){
+                const user={email:currentUser?.email}
+                axios.post('https://resturant-management-server-side.vercel.app/jwt',user,
+                {withCredentials:true}
+            ).then(res=>{
+                    setLoading(false)
+                console.log(res.data)})
+                
+                
+            }
+           else{
+            axios.post('https://resturant-management-server-side.vercel.app/logout',{},{
+                withCredentials:true
+            }).then(res=>{
+                setLoading(false)
+                console.log(res.data)
+            })
+           }
             // console.log(currentUser)
 
 

@@ -5,6 +5,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 
 const Slider = () => {
@@ -32,7 +33,12 @@ const Slider = () => {
                             <div className="text-center  md:w-10/12 text-white lg:w-8/12">
                                 <h1 className="text-center text-4xl font-bold">Boost Customer Satisfaction and Retention Rates</h1>
                                 <p className="my-5">Manage your restaurant`s financial health by tracking budgets, analyzing expenses, and optimizing revenue streams with advanced financial management tools.</p>
-                                <Link className="btn text-black" to='/allfoods'>Show ALL Foods</Link>
+                                <div>
+                                
+                                </div>
+                                <Link className="btn text-black" to='/allfoods'><motion.p
+                                initial={{backgroundColor:'white'}}
+                                 animate={{}}>Show ALL Foods</motion.p></Link>
                             </div>
                         </div>
                     </div>

@@ -6,10 +6,10 @@ const Footer = () => {
             <footer className="footer bg-base-200 text-base-content p-10">
   <aside>
     <img className='w-20 h-20 rounded-full' src={logo} alt="" />
-    <p>
-      ACME Industries Ltd.
+    <p className='font-playWrite'>
+    Riyal`s Cuisine 
       <br />
-      Providing reliable tech since 1992
+      Providing reliable Food service since 1992
     </p>
   </aside>
   <nav>

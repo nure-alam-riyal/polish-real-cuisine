@@ -1,14 +1,16 @@
 
-import axios from "axios";
+
 import useAuthContext from "../Context/AuthContext";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import useAxiosSecure from "../Context/useAxiosSecure";
 
 
 const AddFood = () => {
     const {user}=useAuthContext()
     const navigate=useNavigate()
+    const instanceAxios=useAxiosSecure()
     const addedData=e=>{
         e.preventDefault()
         const formdata=new FormData(e.target)
@@ -17,7 +19,7 @@ const AddFood = () => {
         addedInfo.foodQuantity=parseFloat(addedInfo.foodQuantity)
       
          addedInfo.purchaseCount=0
-        axios.post('https://resturant-management-server-side.vercel.app/add-food',addedInfo)
+        instanceAxios.post('/add-food',addedInfo,)
         .then(res=>{
            if(res.data){
             toast.success('Food item added successFully')

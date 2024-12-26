@@ -10,7 +10,9 @@ const AllFoods = () => {
     const [toppurchesfood,setTopPurchesFoods]=useState([])
     
     useEffect(()=>{
-        axios.get('https://resturant-management-server-side.vercel.app/allfoods')
+        axios.get('https://resturant-management-server-side.vercel.app/allfoods',{
+        withCredentials:true
+        })
         .then(res=>setTopPurchesFoods(res.data))
     },[])
    useEffect(()=>{

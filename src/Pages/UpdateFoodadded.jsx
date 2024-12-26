@@ -1,6 +1,6 @@
 import axios from "axios";
 import useAuthContext from "../Context/AuthContext";
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
 
@@ -13,6 +13,7 @@ const UpdateFoodadded = () => {
         foodOrigin,foodPhoto,foodName,purchaseCount,foodCategory,
         }=useLoaderData()
     const {user}=useAuthContext()
+    const navigate=useNavigate()
     const UpdateData=e=>{
         e.preventDefault()
         const formdata=new FormData(e.target)
@@ -21,9 +22,12 @@ const UpdateFoodadded = () => {
         addedInfo.foodQuantity=parseFloat(addedInfo.foodQuantity)
       
          addedInfo.purchaseCount=purchaseCount
-        axios.put(`https://resturant-management-server-side.vercel.app/update/${id}`,addedInfo)
+        axios.put(`https://resturant-management-server-side.vercel.app/update/${id}`,addedInfo,{
+            withCredentials:true
+        })
         .then(res=>{if(res.data){
                   toast.success('Updated successfull')
+                  navigate('/myfoods')
         }})  
           
     }

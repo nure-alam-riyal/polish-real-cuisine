@@ -16,7 +16,7 @@ createRoot(document.getElementById('root')).render(
       </RouterProvider>
       <Toaster></Toaster>
     </AuthProvider>
-   
-    
+    {/* https://resturant-management-server-side.vercel.app */}
+    {/* https://resturant-management-server-side.vercel.app */}
   </StrictMode>,
 )

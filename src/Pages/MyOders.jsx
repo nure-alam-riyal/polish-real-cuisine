@@ -7,18 +7,19 @@ import { format } from "date-fns";
 import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import { Helmet } from "react-helmet";
+import useAxiosSecure from "../Context/useAxiosSecure";
 
 
 const MyOders = () => {
     const [myOrderFoods, setMyOrdwerFoods] = useState([])
     const { user } = useAuthContext()
-    
+    const instanceAxios=useAxiosSecure()
     useEffect(() => {
         MyOrderFoods()
         
     }, [user])
     const MyOrderFoods=()=>{
-        axios.get(`https://resturant-management-server-side.vercel.app/puchaseFoods/${user?.email}`).then(res => {
+        instanceAxios.get(`/puchaseFoods/${user?.email}`).then(res => {
             setMyOrdwerFoods(res.data)
      })}
    
@@ -33,7 +34,7 @@ const MyOders = () => {
             confirmButtonText: "Yes, delete it!"
           }).then((result) => {
             if (result.isConfirmed) {
-                axios.delete(`https://resturant-management-server-side.vercel.app/purchaseFood/${id}`).then(()=>{
+                axios.delete(`https://resturant-management-server-side.vercel.app/purchaseFood/${id}`,).then(()=>{
                     // console.log(res.data)
                    MyOrderFoods()
                    Swal.fire({

@@ -7,6 +7,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'playWrite': ['Playwrite CO Guides'],
+      'NunitoSans': ['Nunito Sans'],
+      'Handlee':['Handlee'],
+     
+
+    },
+
+
     extend: {
       backgroundImage: {
         'slider1': "url('/src/assets/bgImages/165263.jpg')",

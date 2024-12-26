@@ -1,21 +1,23 @@
 import {  useLoaderData, useNavigate } from "react-router-dom";
 import useAuthContext from "../Context/AuthContext";
-import axios from "axios";
+
 import Lottie from "lottie-react";
 import lottiepur from '../assets/lottie/purchase.json'
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { Helmet } from "react-helmet";
+import useAxiosSecure from "../Context/useAxiosSecure";
 
 
 const PurcheasePages = () => {
   const navigate=useNavigate()
+  const instanceAxios=useAxiosSecure()
   const [error,SetError]=useState('')
   const [errorBuyer,SetBuyerError]=useState('')
   // const [error,SetError]=useState('')
     const {user}=useAuthContext()
     const {_id,
-       foodPhoto,foodName,foodQuantity,
+       foodPhoto,foodName,foodQuantity,Price,
        ownerName,ownerEmail}=useLoaderData()
         const handlePurchase=e=>{
             e.preventDefault()
@@ -34,7 +36,7 @@ const PurcheasePages = () => {
                 return SetError(`Not Enough food to buy.Has ${foodQuantity}`)
                }
                else{
-                axios.post('https://resturant-management-server-side.vercel.app/purchased-foods',purchasedData)
+                instanceAxios.post('/purchased-foods',purchasedData)
                 .then((res)=>{
                   if(res.data)
                     SetError('')
@@ -58,13 +60,13 @@ const PurcheasePages = () => {
             <label className="label">
               <span className="label-text">Food Name</span>
             </label>
-            <input defaultValue={foodName} type="text" placeholder="Food Name" name="foodName" className="input input-bordered" required />
+            <input defaultValue={foodName} type="text" readOnly placeholder="Food Name" name="foodName" className="input input-bordered" required />
           </div>
           <div className="form-control">
             <label className="label">
               <span className="label-text">Price</span>
             </label>
-            <input type="text" name="price" placeholder="Price" className="input input-bordered" required />
+            <input type="text" defaultValue={Price} readOnly name="price" placeholder="Price" className="input input-bordered" required />
            
           </div>
           <div className="form-control">

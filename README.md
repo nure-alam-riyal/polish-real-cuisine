@@ -1,8 +1,37 @@
-# React + Vite
+### project name
+## Riyal`s Cuisine Resturant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+### Live Link
+# https://resturant-management-106b2.web.app/
 
-Currently, two official plugins are available:
+### purpose 
+This project aims to create a comprehensive Restaurant Management platform using the MERN stack (MongoDB, Express.js, React.js, Node.js). The platform will provide an engaging online experience for customers while streamlining internal management processes for the restaurant staff.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### key features
+## For food Buyer
+  * can purchased food
+  * can see his own purchased list
+  * can see also purchased date and time 
+  * can cancel his order
+## For Food owner
+  * can add his food item to sell
+  * can Upate his food
+  * can see his added food item list
+### npm package
+   * react
+   * mongodb
+   * express.js
+   * Axios
+   * date-fns
+   * firebase
+   * lottie-react
+   * match-sorter
+   * react-awesome-reveal
+   * react-helmet
+   * react-hot-toast
+   * react-icons
+   * react-tooltip
+   * swiper
+   * yet-another-react-lightbox
+
+
