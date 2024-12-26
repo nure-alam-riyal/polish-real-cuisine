@@ -24,7 +24,7 @@ const PurcheasePages = () => {
             const formData=new FormData(e.target)
             const purchasedData=Object.fromEntries(formData.entries())
             purchasedData.quantity=parseFloat(purchasedData.quantity)
-            purchasedData.price=parseFloat(purchasedData.price)
+            purchasedData.price=parseFloat(purchasedData.price*purchasedData.quantity)
             purchasedData.foods_id=_id;
             purchasedData.foodPhoto=foodPhoto;
             purchasedData.ownerName=ownerName

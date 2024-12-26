@@ -7,6 +7,7 @@ import Lottie from "lottie-react";
 import nodata from '../assets/lottie/NodataLottie.json'
 import { Helmet } from "react-helmet";
 import useAxiosSecure from "../Context/useAxiosSecure";
+import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 
 
@@ -70,8 +71,8 @@ const MyFoods = () => {
                                         </td>
                                         <td>{
                                             food?.Price}</td>
-                                        <td>
-                                            <button className="btn btn-ghost btn-xs">{food?.purchaseCount}</button>
+                                        <td className="flex items-center justify-center">
+                                            <button className="btn btn-ghost btn-xs">{food?.purchaseCount} < FaBangladeshiTakaSign  /></button>
                                         </td>
                                         <td className="flex justify-center items-center">
                                             <Link to={`/update/${food?._id}`} className='hover:btn'><FaUserEdit className="text-3xl "></FaUserEdit></Link>

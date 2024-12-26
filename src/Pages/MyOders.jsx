@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 import Lottie from "lottie-react";
 import { Helmet } from "react-helmet";
 import useAxiosSecure from "../Context/useAxiosSecure";
+import { FaBangladeshiTakaSign } from "react-icons/fa6";
 
 
 
@@ -68,7 +69,7 @@ const MyOders = () => {
                                     <th>NO.</th>
                                     <th>Image</th>
                                     <th>Food Name</th>
-                                    <th>Price</th>
+                                    <th>Total Price</th>
                                     <th>Buying Time</th>
                                     <th>Owner Name</th>
                                     <th>Action</th>
@@ -97,8 +98,8 @@ const MyOders = () => {
                                             <td>
                                                 {food?.foodName}
                                             </td>
-                                            <td>{
-                                                food?.price}</td>
+                                            <td  className="flex items-center justify-center">{
+                                                food?.price} < FaBangladeshiTakaSign  /></td>
                                             <td>
                                                 
                                                 <div>{format(new Date(food?.buyingTime),'Pp')}</div>
