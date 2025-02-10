@@ -9,6 +9,7 @@ import logo from '../assets/bgImages/logo.png'
 import MenuSection from "../Components/MenuSection";
 import { Slide } from "react-awesome-reveal";
 import { Helmet } from "react-helmet";
+import SectionHeader from "../Components/SectionHeader";
 
 
 
@@ -32,15 +33,7 @@ const Home = () => {
                 <Slider></Slider>
             </section>
             <section>
-            <div> <div className="flex justify-center items-center text-center  mt-6 mb-10">
-                    <div className="md:w-2/3">
-                    <Slide direction="right">
-                        <h2 className="font-bold font-Handlee   text-3xl">Top Food Item</h2>
-                        <p className="my-4"> A highly popular or frequently consumed dish or ingredient, often celebrated for its taste, nutritional value, or cultural significance in a specific context.</p>
-                        </Slide>
-                     </div>
-                </div>
-                </div>
+            <SectionHeader title={'Top Food Item'} subTitle={'A highly popular or frequently consumed dish or ingredient, often celebrated for its taste, nutritional value, or cultural significance in a specific context.'}></SectionHeader>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                     {
                              toppurchesfood.slice(0,4).map(food=><FoodCard key={food._id} food={food}></FoodCard>)

@@ -1,13 +1,18 @@
 import menus from '../assets/bgImages/menuspic.avif'
 import menus2 from '../assets/bgImages/menu2.avif'
 import { Fade, Slide } from 'react-awesome-reveal';
+import SectionHeader from './SectionHeader';
 
 const MenuSection = () => {
     return (
-        <div className='bg-black p-10 text-white'>
+        <div className=' p-10 bg-gray-600 text-white rounded-xl'>
+                                  <Fade direction='up'> 
+                                    {/* <h2 className='text-4xl font-bold font-Handlee'>Restaurant <br /><span>MENU</span></h2> */}
+                                    <SectionHeader title={'Restaurant MENU'}></SectionHeader>
+                                    </Fade>
             <div className="lg:flex ">
                 <div className='lg:w-1/2'>
-               <Fade direction='up'> <h2 className='text-4xl font-bold font-Handlee'>Restaurant <br /><span>MENU</span></h2></Fade>
+              
                 <div className='grid grid-cols-1 md:grid-cols-2 '>
                     <Slide direction='left'>
                     <div className='my-4'>
