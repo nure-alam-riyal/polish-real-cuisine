@@ -42,7 +42,7 @@ const AllFoods = () => {
             <div className="my-6">
                 <div className="flex md:w-1/3 mx-auto justify-center relative"><input onChange={(e)=>setSearch(e?.target?.value)} className="p-3  w-full border rounded-lg" type="search" name="" id="" placeholder="search by food name" /> <FaSearch className="absolute top-4 left-[90%] "></FaSearch> </div>
             </div>
-                       <div className="grid grid-cols-1 my-10 md:grid-cols-2 lg:grid-cols-3 gap-5">
+                       <div className="grid grid-cols-1 my-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                            {
                                     toppurchesfood?.map(food=><FoodCard key={food._id} food={food}></FoodCard>)
        

@@ -50,6 +50,7 @@ const Registration = () => {
           }).catch(() => {
             // An error occurred
             // ...
+            
           });
         })
         .catch(err => toast.error(err.message))

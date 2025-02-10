@@ -16,8 +16,8 @@ const FoodCard = ({ food }) => {
                     alt={foodName}/>
             </figure>
             <div className="card-body">
-                <h2 className="card-title">Food Name:{foodName}</h2>
-                <p>Food Category:{foodCategory}</p>
+                <h2 className="card-title">{foodName}</h2>
+                <p className='text-blue-400'>{foodCategory}</p>
                 <div className='flex justify-between'><p>Purchesed:{purchaseCount}</p> <p>Quantity:{foodQuantity}</p></div>
                 <div className="card-actions justify-end">
                     <Link to={`/food/${_id}`}><button className="btn btn-primary">Details</button></Link>
