@@ -22,7 +22,8 @@ const NavBar = () => {
        <li className="px-4 text-xl font-semibold"><Themenanging></Themenanging></li>
   </>
     return (
-        <div className="navbar mx-auto w-11/12 bg-base-100">
+       <div className="flex justify-center">
+         <div className="navbar mx-auto w-11/12 opacity-80 backdrop-blur-lg fixed z-50 bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex="0" role="button" className="btn btn-ghost lg:hidden">
@@ -86,6 +87,7 @@ const NavBar = () => {
                 }
             </div>
         </div>
+       </div>
     );
 };
 
