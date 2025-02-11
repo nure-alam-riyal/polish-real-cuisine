@@ -11,7 +11,7 @@ const FoodCard = ({ food }) => {
         <div className="card glass ">
            <Fade direction='down'>
            <figure>
-                <img className='w-full h-80 rounded-lg' referrerPolicy='no-referrer'
+                <img className='w-full h-60 rounded-lg' referrerPolicy='no-referrer'
                     src={foodPhoto}
                     alt={foodName}/>
             </figure>

@@ -6,22 +6,22 @@ export default function SeasonalDelights() {
         {
             name: "Pumpkin Spice Latte",
             description: "A warm and cozy blend of pumpkin, spices, and espresso.",
-            image: "https://source.unsplash.com/400x300/?pumpkin,latte",
+            image: "https://i.ibb.co.com/7xPBXJVG/autumn-pumpkin-spice-latte-with-whipped-cream-cinnamon-sticks.jpg",
           },
           {
             name: "Grilled Summer Peach Salad",
             description: "Fresh peaches, arugula, and feta cheese drizzled with honey.",
-            image: "https://source.unsplash.com/400x300/?peach,salad",
+            image: "https://i.ibb.co.com/TGzzL46/fruit-galette-composition-tasty-food-concept.jpg",
           },
           {
             name: "Winter Truffle Pasta",
             description: "Creamy truffle-infused pasta with parmesan and herbs.",
-            image: "https://source.unsplash.com/400x300/?truffle,pasta",
+            image: "https://i.ibb.co.com/xK3ymq0T/eating-pasta.jpg",
           },
           {
             name: "Spring Berry Tart",
             description: "A delightful tart filled with fresh seasonal berries.",
-            image: "https://source.unsplash.com/400x300/?berry,tart",
+            image: "https://i.ibb.co.com/WpzsPVWZ/coffee-with-tasty-fruit-tart-flowers-wooden-tray.jpg",
           },
     ];
   
