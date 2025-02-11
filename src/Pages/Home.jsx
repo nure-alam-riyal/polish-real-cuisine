@@ -10,6 +10,8 @@ import MenuSection from "../Components/MenuSection";
 import { Slide } from "react-awesome-reveal";
 import { Helmet } from "react-helmet";
 import SectionHeader from "../Components/SectionHeader";
+import SalesPromotion from "../Components/SalesPromotion";
+import SeasonalDelights from "../Components/SeasonalDelights";
 
 
 
@@ -48,7 +50,11 @@ const Home = () => {
             <div>
                 <MenuSection></MenuSection>
             </div>
-            <section className="bg-green-100 my-5 rounded-lg">
+            <section>
+                <SeasonalDelights></SeasonalDelights>
+            </section>
+          
+            <section className="bg-slate-50 my-5 rounded-lg">
                 <div> <div className="flex justify-center items-center text-center py-3  mt-6 mb-10">
                     <div className="md:w-2/3 text-center">
                         <div className="flex justify-center my-2"><img className="w-40 h-32 object-cover rounded-full" src={logo} alt="" /></div>

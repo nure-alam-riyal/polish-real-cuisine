@@ -9,22 +9,32 @@ import { Fade } from "react-awesome-reveal";
 const AllFoods = () => {
     const [search,setSearch]=useState('')
     const [toppurchesfood,setTopPurchesFoods]=useState([])
-    
+
+    const handleSortPrice=()=>{
+        const sortFood= toppurchesfood.sort((a,b)=>a?.Price-b?.Price)
+        console.log(sortFood)
+       setTopPurchesFoods(sortFood)
+      
+      }
     useEffect(()=>{
         axios.get('https://resturant-management-server-side.vercel.app/allfoods',{
         withCredentials:true
         })
         .then(res=>setTopPurchesFoods(res.data))
     },[])
+
    useEffect(()=>{
     // const handleSearch=e=>{
         // console.log(e.target.value)
         axios.get(`https://resturant-management-server-side.vercel.app/allfoods?name=${search}`)
                .then(res=>setTopPurchesFoods(res.data))
-       
+    
         //    }
    },[search])
 //    console.log(search)
+
+console.log(toppurchesfood)
+
     return (
        <section>
         <Helmet>
@@ -39,8 +49,9 @@ const AllFoods = () => {
                          </div>
                          </div>
             </div>
-            <div className="my-6">
-                <div className="flex md:w-1/3 mx-auto justify-center relative"><input onChange={(e)=>setSearch(e?.target?.value)} className="p-3  w-full border rounded-lg" type="search" name="" id="" placeholder="search by food name" /> <FaSearch className="absolute top-4 left-[90%] "></FaSearch> </div>
+            <div className="my-6  md:flex justify-between ">
+                <div className="flex md:w-2/3 mx-auto justify-center relative"><input onChange={(e)=>setSearch(e?.target?.value)} className="p-3  w-full border rounded-lg" type="search" name="" id="" placeholder="search by food name" /> <FaSearch className="absolute top-4 left-[90%] "></FaSearch> </div>
+                <div> <button onClick={handleSortPrice} className="btn my-2">Sort By Price</button></div>
             </div>
                        <div className="grid grid-cols-1 my-10 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                            {
