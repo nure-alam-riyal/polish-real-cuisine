@@ -53,7 +53,9 @@ const Home = () => {
             <section>
                 <SeasonalDelights></SeasonalDelights>
             </section>
-          
+            <section>
+                <SalesPromotion></SalesPromotion>
+            </section>
             <section className="bg-slate-50 my-5 rounded-lg">
                 <div> <div className="flex justify-center items-center text-center py-3  mt-6 mb-10">
                     <div className="md:w-2/3 text-center">
